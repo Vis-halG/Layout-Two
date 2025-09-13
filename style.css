@@ -1,5 +1,4 @@
-
-
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +14,7 @@ body {
     height: 100vh;
 }
 
+/* Main container */
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -24,15 +24,17 @@ body {
     width: 95%;
     height: 100%;
 }
-.leftBoxPluse{
+
+/* Left Box with two stacked sections */
+.leftBoxPluse {
     flex: 2;
     min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
 .leftBoxPluse1 {
-   
     min-width: 250px;
     background-image: url('1.jpg');
     background-size: cover;
@@ -43,34 +45,34 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 49.5%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-   
 }
 
 .leftBoxPluse2 {
-    
     min-width: 250px;
     background-image: url('2.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    margin-top:20px;
+    margin-top: 20px;
     border-radius: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     height: 49.5%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-.leftBoxPluse1:hover {
+/* Hover effects */
+.leftBoxPluse1:hover,
+.leftBoxPluse2:hover,
+.leftBox:hover,
+.fristBox:hover,
+.second-1:hover,
+.second-2:hover,
+.thirdBox:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.leftBoxPluse2:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
+/* Middle Box */
 .leftBox {
     flex: 1;
     min-width: 250px;
@@ -85,11 +87,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.leftBox:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
+/* Right Section */
 .rightBox {
     flex: 2;
     min-width: 300px;
@@ -110,19 +108,15 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.fristBox:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
+/* Second Box Split */
 .secondBox {
     display: flex;
     gap: 20px;
 }
 
+.second-1,
 .second-2 {
     flex: 1;
-    background-image: url('5.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -134,23 +128,14 @@ body {
 }
 
 .second-1 {
-    flex: 1;
     background-image: url('6.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-height: 23vh;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.second-1:hover, .second-2:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+.second-2 {
+    background-image: url('5.jpg');
 }
 
+/* Third Box */
 .thirdBox {
     background-image: url('7.jpg');
     background-size: cover;
@@ -163,26 +148,45 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.thirdBox:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
+/* ===================== Responsive ===================== */
 @media (max-width: 768px) {
     .main {
-        flex-direction: column;
-        align-items: center;
+        gap: 10px; /* smaller gap */
+        padding: 10px;
     }
 
-    .leftBox, .rightBox {
-        width: 100%;
+    .leftBoxPluse1,
+    .leftBoxPluse2,
+    .leftBox,
+    .fristBox,
+    .second-1,
+    .second-2,
+    .thirdBox {
+        padding: 20px;       /* less padding */
+        border-radius: 15px; /* smaller corners */
+        height: auto;        /* flexible height */
+        min-height: 150px;   /* ensure visibility */
     }
 
-    .secondBox {
-        flex-direction: column;
+    body {
+        font-size: 14px; /* shrink text for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .leftBoxPluse1,
+    .leftBoxPluse2,
+    .leftBox,
+    .fristBox,
+    .second-1,
+    .second-2,
+    .thirdBox {
+        padding: 15px;
+        border-radius: 12px;
+        min-height: 120px;
     }
 
-    .second-1, .second-2 {
-        width: 100%;
+    body {
+        font-size: 13px;
     }
 }
