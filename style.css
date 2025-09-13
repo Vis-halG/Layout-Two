@@ -1,3 +1,4 @@
+/* Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -10,9 +11,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+/* Main container */
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -22,64 +24,50 @@ body {
     width: 95%;
     height: 100%;
 }
-.leftBoxPluse{
+
+/* Left Box with two stacked boxes */
+.leftBoxPluse {
     flex: 2;
     min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.leftBoxPluse1 {
-   
+
+.leftBoxPluse1,
+.leftBoxPluse2 {
     min-width: 250px;
-    background-image: url('1.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
-    padding: 40px;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 49.5%;
+    flex: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-   
+}
+
+.leftBoxPluse1 {
+    background-image: url('1.jpg');
 }
 
 .leftBoxPluse2 {
-    
-    min-width: 250px;
     background-image: url('2.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    margin-top:20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 49.5%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-.leftBoxPluse1:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
+.leftBoxPluse1:hover,
 .leftBoxPluse2:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Middle Box */
 .leftBox {
     flex: 1;
     min-width: 250px;
     background-image: url('3.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
-    padding: 40px;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 80%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -88,6 +76,7 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Right Section */
 .rightBox {
     flex: 2;
     min-width: 300px;
@@ -96,83 +85,71 @@ body {
     gap: 20px;
 }
 
+.fristBox,
+.thirdBox {
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+}
+
 .fristBox {
     background-image: url('4.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 35%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.fristBox:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.secondBox {
-    display: flex;
-    gap: 20px;
-}
-
-.second-2 {
-    flex: 1;
-    background-image: url('5.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-height: 23vh;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.second-1 {
-    flex: 1;
-    background-image: url('6.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-height: 23vh;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.second-1:hover, .second-2:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .thirdBox {
     background-image: url('7.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 35%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.fristBox:hover,
 .thirdBox:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
+/* Second Box Split */
+.secondBox {
+    display: flex;
+    gap: 20px;
+}
+
+.second-1,
+.second-2 {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 200px;
+}
+
+.second-1 {
+    background-image: url('6.jpg');
+}
+
+.second-2 {
+    background-image: url('5.jpg');
+}
+
+.second-1:hover,
+.second-2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 992px) {
     .main {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
-    .leftBox, .rightBox {
+    .leftBoxPluse,
+    .leftBox,
+    .rightBox {
         width: 100%;
     }
 
@@ -180,7 +157,31 @@ body {
         flex-direction: column;
     }
 
-    .second-1, .second-2 {
+    .second-1,
+    .second-2 {
         width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .main {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .leftBoxPluse1,
+    .leftBoxPluse2,
+    .leftBox,
+    .fristBox,
+    .second-1,
+    .second-2,
+    .thirdBox {
+        min-height: 180px; /* shrink height for small screens */
+        padding: 20px; /* less padding */
+        border-radius: 15px;
     }
 }
